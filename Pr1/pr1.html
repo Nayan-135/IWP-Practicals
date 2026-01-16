@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RBU College Website</title>
+    <link rel="stylesheet" href="pr1.css" />
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <img src="logo.png" alt="RBU Logo">
+    </div>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#about">About Us</a></li>
+            <li><a class="nav-link" href="#programs">Programs</a></li>
+            <li><a class="nav-link" href="#admissions">Admissions</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="home">
+    <div class="content">
+        <div class="section">
+            <h2>Welcome to RBU College</h2>
+            <p>RBU College is a leading educational institution dedicated to providing quality education and fostering innovation. Our campus offers state-of-the-art facilities and experienced faculty members committed to student success.</p>
+            <p>We offer a wide range of programs across various disciplines, ensuring that students receive comprehensive education tailored to their career goals.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Quality Education</h3>
+                <p>Learn from experienced faculty with industry expertise</p>
+            </div>
+            <div class="card">
+                <h3>Modern Facilities</h3>
+                <p>Access cutting-edge labs and learning resources</p>
+            </div>
+            <div class="card">
+                <h3>Career Support</h3>
+                <p>Get guidance for your professional journey</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="content">
+        <div class="section">
+            <h2>About RBU College</h2>
+            <p>Founded in 1995, RBU College has been at the forefront of higher education for over two decades. Our institution is committed to academic excellence, research, and community service.</p>
+            <p>Our mission is to empower students with knowledge, skills, and values that prepare them for successful careers and responsible citizenship.</p>
+        </div>
+        <div class="section">
+            <h2>Our Vision</h2>
+            <p>To be a globally recognized institution that transforms lives through innovative education and research.</p>
+        </div>
+
+        <div class="section">
+            <h2>Campus Facilities</h2>
+            <p>Our campus includes modern classrooms, well-equipped laboratories, a comprehensive library, sports facilities, hostels, and cafeteria services.</p>
+        </div>
+    </div>
+</section>
+<section id="programs">
+    <div class="content">
+        <div class="section">
+            <h2>Academic Programs</h2>
+            <p>RBU College offers diverse programs designed to meet the evolving needs of students and industry.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Computer Science</h3>
+                <p>Bachelor's, Master's, PhD</p>
+                <p>Software Development, AI, Data Science</p>
+            </div>
+            <div class="card">
+                <h3>Engineering</h3>
+                <p>Bachelor's, Master's, PhD</p>
+                <p>Mechanical, Civil, Electrical</p>
+            </div>
+            <div class="card">
+                <h3>Management</h3>
+                <p>Bachelor's, Master's, Diploma</p>
+                <p>Business Administration, Finance</p>
+            </div>
+            <div class="card">
+                <h3>Science</h3>
+                <p>Bachelor's, Master's, PhD</p>
+                <p>Physics, Chemistry, Biology</p>
+            </div>
+            <div class="card">
+                <h3>Arts</h3>
+                <p>Bachelor's, Master's</p>
+                <p>Literature, History, Psychology</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="admissions">
+    <div class="content">
+        <div class="section">
+            <h2>Admissions Information</h2>
+            <p>We welcome applications from motivated students who are eager to pursue excellence in their chosen fields.</p>
+        </div>
+
+        <div class="section">
+            <h2>Eligibility Criteria</h2>
+            <p>Bachelor's Programs: Completion of higher secondary education with minimum 50% marks.</p>
+            <p>Master's Programs: Bachelor's degree in relevant field with minimum 55% marks.</p>
+            <p>PhD Programs: Master's degree with strong research background.</p>
+        </div>
+
+        <div class="section">
+            <h2>Application Process</h2>
+            <p>Submit online application form with required documents. Entrance examination and interview will be conducted for shortlisted candidates.</p>
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <div class="form">
+        <div class="title">
+            <h2>Enter Your Information</h2>
+        </div>
+        <div class="info">
+            <form onsubmit="handleSubmit(event)">
+                <table>
+                    <tr>
+                        <td><label for="name">Full Name</label></td>
+                        <td><input type="text" id="name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" id="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone Number</label></td>
+                        <td><input type="tel" id="phone" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="program">Program</label></td>
+                        <td>
+                            <select id="program">
+                                <option>Bachelor's</option>
+                                <option>Master's</option>
+                                <option>PhD</option>
+                                <option>Diploma</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="department">Department</label></td>
+                        <td>
+                            <select id="department">
+                                <option>Computer Science</option>
+                                <option>Engineering</option>
+                                <option>Management</option>
+                                <option>Science</option>
+                                <option>Arts</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="message">Message</label></td>
+                        <td><textarea id="message" rows="4"></textarea></td>
+                    </tr>
+                    <tr class="submit-row">
+                        <td colspan="2">
+                            <button type="submit">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <p>&copy; 2025 RBU College. All rights reserved.</p>
+</footer>
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const program = document.getElementById('program').value;
+        const department = document.getElementById('department').value; 
+        alert('Form submitted successfully!\n\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nProgram: ' + program + '\nDepartment: ' + department); 
+        event.target.reset();
+    }
+</script>
+
+</body>
+</html>
