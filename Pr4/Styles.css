@@ -2,88 +2,79 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f4f6f8;
+    background: #ffffff;
+    color: #000000;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 30px;
 }
 
 .container {
-    background: #ffffff;
-    padding: 25px;
-    width: 360px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     text-align: center;
-    color: #777;
     margin-bottom: 20px;
     font-size: 14px;
 }
 
-.input-group {
-    display: flex;
-    gap: 10px;
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
 input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 6px;
+    border: 1px solid #000;
 }
 
 button {
-    padding: 10px 14px;
-    background: #4f46e5;
+    padding: 6px;
+    border: 1px solid #000;
+    background: #000;
     color: #fff;
-    border: none;
-    border-radius: 6px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #4338ca;
+    background: #fff;
+    color: #000;
 }
 
-ul {
-    list-style: none;
-    margin-top: 20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-li {
-    background: #f9fafb;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+th, td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: center;
+    font-size: 13px;
 }
 
-li.completed {
-    text-decoration: line-through;
-    color: #888;
+.delete-btn {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    padding: 4px 6px;
+    cursor: pointer;
 }
 
-.task-actions button {
-    margin-left: 6px;
-    background: #e5e7eb;
-    color: #333;
-}
-
-.task-actions button:hover {
-    background: #d1d5db;
+.delete-btn:hover {
+    background: #000;
+    color: #fff;
 }

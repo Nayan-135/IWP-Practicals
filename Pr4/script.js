@@ -1,36 +1,32 @@
-const taskInput = document.getElementById("taskInput");
-const addTaskBtn = document.getElementById("addTaskBtn");
-const taskList = document.getElementById("taskList");
+const form = document.getElementById("studentForm");
+const list = document.getElementById("studentList");
 
-addTaskBtn.addEventListener("click", addTask);
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-function addTask() {
-    const taskText = taskInput.value.trim();
+    const name = document.getElementById("name").value;
+    const cls = document.getElementById("class").value;
+    const gpa = document.getElementById("gpa").value;
+    const backlogs = document.getElementById("backlogs").value;
+    const gap = document.getElementById("gapYear").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
 
-    if (taskText === "") {
-        alert("Please enter a task");
-        return;
-    }
+    const row = document.createElement("tr");
 
-    const li = document.createElement("li");
-    li.textContent = taskText;
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${cls}</td>
+        <td>${gpa}</td>
+        <td>${backlogs}</td>
+        <td>${gap}</td>
+        <td>${phone}</td>
+        <td>${email}</td>
+        <td><button class="delete-btn">X</button></td>
+    `;
 
-    const actions = document.createElement("div");
-    actions.className = "task-actions";
+    row.querySelector(".delete-btn").onclick = () => row.remove();
 
-    const completeBtn = document.createElement("button");
-    completeBtn.textContent = "✔";
-    completeBtn.onclick = () => li.classList.toggle("completed");
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "✖";
-    deleteBtn.onclick = () => li.remove();
-
-    actions.appendChild(completeBtn);
-    actions.appendChild(deleteBtn);
-
-    li.appendChild(actions);
-    taskList.appendChild(li);
-
-    taskInput.value = "";
-}
+    list.appendChild(row);
+    form.reset();
+});
