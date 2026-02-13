@@ -13,22 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check = $conn->query("SELECT id FROM users WHERE username='$username'");
 
     if ($check->num_rows > 0) {
-
         echo "<script>
-                alert('User already exists! Please login.');
+                alert('Username already taken! Please choose another or login.');
                 window.location.href='register.php';
               </script>";
-
     } else {
-
-        $insert = $conn->query("INSERT INTO users 
-                    (username, password, email, phone, city, role) 
-                    VALUES 
+        $insert = $conn->query("INSERT INTO users
+                    (username, password, email, phone, city, role)
+                    VALUES
                     ('$username', '$password', '$email', '$phone', '$city', 'user')");
 
         if ($insert) {
             echo "<script>
-                    alert('You have registered successfully!');
+                    alert('Account created successfully! Please login.');
                     window.location.href='login.php';
                   </script>";
         } else {
@@ -42,35 +39,109 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Create Account</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePlex — Create Account</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="login-container">
-    <h2>Create Account</h2>
+<div class="page-wrapper">
+    <div class="card auth-card" style="max-width: 500px;">
 
-    <form method="POST">
-        <input type="text" name="username" placeholder="Enter Username" required>
+        <!-- Brand -->
+        <div class="brand">
+            <div class="brand-icon">✨</div>
+            <div class="brand-name">CinePlex</div>
+            <div class="brand-tagline">Create Your Account</div>
+        </div>
 
-        <input type="password" name="password" placeholder="Enter Password" required>
+        <p class="page-hint">Join thousands of movie lovers. Free forever.</p>
 
-        <input type="email" name="email" placeholder="Enter Email" required>
+        <form method="POST" autocomplete="off">
 
-        <input type="text" name="phone" placeholder="Enter Phone Number" 
-               pattern="[0-9]{10}" title="Enter 10 digit phone number" required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        class="form-input"
+                        placeholder="Choose a username"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        class="form-input"
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+            </div>
 
-        <input type="text" name="city" placeholder="Enter City" required>
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input
+                    type="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="your@email.com"
+                    required
+                >
+            </div>
 
-        <button type="submit">Register</button>
-    </form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input
+                        type="text"
+                        name="phone"
+                        class="form-input"
+                        placeholder="10-digit number"
+                        pattern="[0-9]{10}"
+                        title="Enter a 10-digit phone number"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label">City</label>
+                    <input
+                        type="text"
+                        name="city"
+                        class="form-input"
+                        placeholder="Your city"
+                        required
+                    >
+                </div>
+            </div>
 
-    <br>
-    <a href="home.php">Back to Home</a>
+            <div style="margin-top: 24px;">
+                <button type="submit" class="btn btn-primary">
+                    Create Account &nbsp;→
+                </button>
+            </div>
+
+        </form>
+
+        <div class="divider"></div>
+
+        <p style="text-align:center; font-size:13px; color: var(--text-muted);">
+            Already have an account?
+            <a href="login.php" class="link" style="margin-left:4px;">Sign in</a>
+        </p>
+
+        <div style="text-align:center;">
+            <a href="home.php" class="back-link">← Back to Home</a>
+        </div>
+
+    </div>
 </div>
 
 </body>
