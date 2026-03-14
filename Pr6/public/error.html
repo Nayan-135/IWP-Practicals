@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error — CricketHub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(239,68,68,0.12);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 20px;
+    }
+    .auth-card { text-align: center; }
+    .auth-card h2 { color: #ef4444; font-size: 24px; }
+    #message {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 10px 0 28px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-card">
+
+    <div class="error-icon">⚠️</div>
+
+    <h2>Authentication Failed</h2>
+    <p id="message"></p>
+
+    <button class="btn-primary" onclick="window.history.back()">Try Again</button>
+
+    <div class="auth-footer" style="margin-top:20px;">
+      <a href="login.html">← Back to Login</a>
+    </div>
+
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const message = document.getElementById("message");
+
+    if (type === "exists") {
+      message.innerText = "An account with this email already exists. Please sign in instead.";
+    } else if (type === "login") {
+      message.innerText = "Invalid email or password. Please check your credentials and try again.";
+    } else {
+      message.innerText = "Something went wrong. Please try again.";
+    }
+  </script>
+
+</body>
+</html>
